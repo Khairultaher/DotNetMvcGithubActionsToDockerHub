@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "Wz1q7p24naIgcvjOwWFl57WItWTQlXWdzgLy/VzCH+UpL0J5ItZi8yuGHAFVeH56FLtvmtB9dLvflgleJ9ZX9Q==",
+  "success": true,
+  "projectFilePath": "E:\\PRACTICE\\DOT NET\\DotNetMvcGithubActionsToDockerHub\\weatherforecast\\weatherforecast.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Khairul\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.14\\microsoft.visualstudio.azure.containers.tools.targets.1.10.14.nupkg.sha512",
+    "C:\\Users\\Khairul\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.15\\microsoft.netcore.app.host.win-x64.3.1.15.nupkg.sha512"
+  ],
+  "logs": []
+}

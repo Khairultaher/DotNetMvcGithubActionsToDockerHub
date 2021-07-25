@@ -1,0 +1,11 @@
+version: '3.4'
+
+services:
+  weatherforecast:
+    image: weatherforecast-img:v2
+    build:
+      context: .
+      dockerfile: Dockerfile
+    #deploy:
+    #  mode: replicated
+    #  replicas: 6

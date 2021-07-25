@@ -1,0 +1,19 @@
+services:
+  weatherforecast:
+    build:
+      context: E:\PRACTICE\DOT NET\DockerFileConfigurationForMultyLayerDotNetApp
+      dockerfile: Dockerfile
+    container_name: weatherforecast-con
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: https://+:443;http://+:80
+    image: weatherforecast-img:v2
+    ports:
+    - published: 39177
+      target: 80
+    - published: 44391
+      target: 443
+    volumes:
+    - C:\Users\Khairul\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\Khairul\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+version: '3.4'
