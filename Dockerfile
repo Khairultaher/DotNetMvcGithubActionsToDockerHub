@@ -1,20 +1,19 @@
-FROM mcr.microsoft.com/dotnet/sdk:3.1 AS base
-WORKDIR /app
-#EXPOSE 5000
-#ENV ASPNETCORE_URLS=http://+:5000
-
-FROM mcr.microsoft.com/dotnet/sdk:3.1 AS build
+# Define base image
+FROM microsoft/dotnet:3.1 AS build
+# Copy project files
 WORKDIR /src
 COPY . .
+# Restore
 RUN dotnet restore "weatherforecast/weatherforecast.csproj"
 WORKDIR "/src/weatherforecast"
 RUN dotnet build "weatherforecast.csproj" -c Release -o /app
-
+# Publish
 FROM build AS publish
 WORKDIR "/src/weatherforecast"
 RUN dotnet publish "weatherforecast.csproj" -c Release -o /app
 
-FROM base AS final
+# Runtime
+FROM microsoft/dotnet:3.1-aspnetcore-runtime
 WORKDIR /app
 EXPOSE 80
 EXPOSE 443
