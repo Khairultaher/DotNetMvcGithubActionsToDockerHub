@@ -1,0 +1,37 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Build the Docker image
+    - uses: actions/checkout@v2
+    
+    - name: buildx
+      id: buildx
+      uses: docker/setup-buildx-actions@v1
+      
+    - name: DockerHub Login
+      uses: docker/login-action@v1
+      with:
+        username: ${{ secrets.DOCKER_USER }}
+        password: ${{ secrets.DOCKER_PASS }}
+    
+    - name: Build and Push
+      uses: docker/build-push-action@v1
+      with:
+        push: true
+        tags: khairul100/weatherforecast:latest
+        
+      
+    
+
